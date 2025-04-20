@@ -1,0 +1,320 @@
+@font-face {
+  font-family: "Super Lobster";
+  src: url("assets/font/Super Lobster.ttf");
+}
+
+/* reset */
+/* 1. Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+  margin: 0;
+}
+
+/* 3. Enable keyword animations */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+  }
+}
+
+body {
+  /* 4. Add accessible line-height */
+  line-height: 1.5;
+  /* 5. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 6. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 7. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* 8. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* 9. Improve line wrapping */
+p {
+  text-wrap: pretty;
+  font-family: "Quicksand", sans-serif;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--primary-color);
+  text-wrap: balance;
+  font-family: Super Lobster, sans-serif;
+}
+
+/*
+  10. Create a root stacking context
+*/
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/* reset end */
+
+:root {
+  --primary-color: #ea1b48;
+  --primary-dark: #bb1539;
+  --primary-disabled: #ffdae2;
+  --text-primary-disabled: #f398ab;
+  --text-black: #383838;
+  --text-grey: #727272;
+
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 600;
+  font-family: "Quicksand", sans-serif;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: all ease 0.1s;
+}
+button:hover {
+  /* border-color: #646cff; */
+  background-color: var(--primary-dark);
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+button:disabled {
+  pointer-events: none;
+  background-color: var(--primary-disabled);
+  color: var(--text-primary-disabled);
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.875rem;
+  font-family: "Quicksand", sans-serif;
+}
+
+.form-input,
+.form-select {
+  /* border: 1px solid grey; */
+  border: none;
+  display: block;
+  height: 2.5rem;
+  border-radius: 0.5rem;
+  padding: 0 1rem;
+  width: 100%;
+  background-color: #ededed;
+  color: var(--text-black);
+}
+
+.form-select {
+  appearance: none; /* Remove default arrow (for most browsers) */
+  -webkit-appearance: none; /* Safari */
+  -moz-appearance: none; /* Firefox */
+  background-image: url('data:image/svg+xml;utf8,<svg fill="black" height="16" viewBox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1rem;
+}
+
+.form-desc,
+.form-error {
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+.form-desc {
+  color: var(--text-grey);
+}
+.form-error {
+  color: red;
+}
+
+input:focus {
+  outline: none;
+}
+
+.card {
+  background-color: white;
+  border-radius: 1rem;
+  color: var(--text-black);
+}
+
+.btn-submit {
+  width: 100%;
+  margin-top: 2.5rem;
+  background-color: var(--primary-color);
+}
+
+.btn-back {
+  background-color: transparent;
+  border: 1px solid lightgray;
+  padding: 0.5rem;
+}
+
+.btn-back:hover {
+  background-color: lightgray;
+}
+
+.bg-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -10;
+  background-image: url("assets/bg.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.big-candy {
+  position: absolute;
+  z-index: -1;
+  width: 18rem;
+  left: 50%;
+  top: 10%;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.mt-3 {
+  margin-top: 0.875rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.btn-cta {
+  font-family: Super Lobster, sans-serif;
+  background-color: #fff4a4;
+  text-transform: uppercase;
+  color: #e08500;
+  box-shadow: 0 6px 0 #f2ca20;
+  font-size: 2rem;
+  padding: 0.5rem 2rem;
+  display: block;
+  margin: 2rem auto 0 auto;
+  transition: all ease 0.1s;
+  position: relative;
+  width: 260px;
+}
+
+.btn-cta:hover {
+  background-color: rgb(252, 239, 142);
+}
+
+.btn-cta:hover:active {
+  box-shadow: none;
+  transform: translateY(2px);
+}
+
+/* for sm device  */
+@media (max-width: 575.98px) {
+  .bg-img {
+    background-image: url("assets/bg-mobile.svg");
+  }
+
+  .big-candy {
+    width: 12rem;
+    top: 12%;
+  }
+
+  .btn-cta {
+    font-size: 1.5rem;
+    padding: 0.5rem 2rem;
+    width: 260px;
+  }
+}
