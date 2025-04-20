@@ -277,7 +277,7 @@ input:focus {
   text-align: center;
 }
 
-.btn-cta {
+a.btn-cta {
   font-family: Super Lobster, sans-serif;
   background-color: #fff4a4;
   text-transform: uppercase;
@@ -290,13 +290,15 @@ input:focus {
   transition: all ease 0.1s;
   position: relative;
   width: 260px;
+  text-align: center;
+  border-radius: 0.875rem;
 }
 
-.btn-cta:hover {
+a.btn-cta:hover {
   background-color: rgb(252, 239, 142);
 }
 
-.btn-cta:hover:active {
+a.btn-cta:hover:active {
   box-shadow: none;
   transform: translateY(2px);
 }

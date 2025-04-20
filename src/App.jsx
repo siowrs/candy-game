@@ -7,6 +7,7 @@ import { ArrowLeft } from "lucide-react";
 function App() {
   const [countryList, setCountryList] = useState(null);
   const [error, setError] = useState(null);
+  const [url, setUrl] = useState(null);
   const [step, setStep] = useState(1);
   const [timer, setTimer] = useState(120); // in seconds
 
@@ -94,6 +95,7 @@ function App() {
         setError(result.error);
       } else {
         setStep(3);
+        setUrl(result.product_url);
       }
     } catch (err) {
       console.log(err);
@@ -239,13 +241,9 @@ function App() {
           : `Bonus candy expires in ${formatTime()} minutes! Hurry!`}
       </h2>
 
-      <Button
-        type="button"
-        className="btn-cta"
-        onClick={() => window.location.reload()}
-      >
-        Login Now
-      </Button>
+      <a href={url} className="btn-cta">
+        Login Now!
+      </a>
     </>
   );
 }
